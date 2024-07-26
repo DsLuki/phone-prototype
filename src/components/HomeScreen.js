@@ -33,25 +33,37 @@ export default function HomeScreen() {
           title="Kontakty"
           backgroundColor="bg-orange-700"
           path="/contacts"
-          source="/img/contactIcon.svg"
+          source="/img/contacticon.svg"
         />
         <Icon
           title="Wiadomości"
           backgroundColor="bg-blue-600"
           path="/messages"
-          source="/img/messageIcon.svg"
+          source="/img/messageicon.svg"
         />
         <Icon
           title="Kalendarz"
           backgroundColor="bg-green-900"
           path="/calendar"
-          source="/img/calendarIcon.svg"
+          source="/img/calendaricon.svg"
         />
         <Icon
           title="Notatnik"
           backgroundColor="bg-amber-400"
           path="/notes"
-          source="/img/notesIcon.svg"
+          source="/img/notesicon.svg"
+        />
+        <Icon
+          title="Internet"
+          backgroundColor="bg-purple-800"
+          path="/browser"
+          source="/img/browsericon.svg"
+        />
+        <Icon
+          title="Galeria"
+          backgroundColor="bg-red-600"
+          path="/gallery"
+          source="/img/galleryicon.svg"
         />
       </div>
     </div>

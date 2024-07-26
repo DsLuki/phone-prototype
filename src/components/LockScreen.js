@@ -1,13 +1,46 @@
-import React, { useContext } from "react";
-import { PassContext } from "./context/PassContext";
+import React, { useState, useEffect } from "react";
 
 function LockScreen() {
-  const { userInput, handleUserInput, passCode, isCorrect } =
-    useContext(PassContext);
+  const [passCode, setPassCode] = useState("11111");
+  const [userInput, setUserInput] = useState("");
+  const [isCorrect, setIsCorrect] = useState(null);
+
+  const handleUserInput = (value) => {
+    if (userInput.length < passCode.length) {
+      setUserInput((prev) => prev + value.toString());
+    }
+  };
+
+  const checkPass = () => {
+    if (userInput.length === passCode.length) {
+      if (userInput === passCode) {
+        setTimeout(() => {
+          setUserInput("");
+          setIsCorrect(true);
+          localStorage.setItem("Authenticated", true);
+          window.location.href = "/home";
+        }, 500);
+      } else {
+        setTimeout(() => {
+          setUserInput("");
+          setIsCorrect(false);
+          localStorage.setItem("Authenticated", false);
+          setTimeout(() => {
+            setIsCorrect(null);
+          }, 700);
+        }, 500);
+      }
+    }
+  };
+
+  useEffect(() => {
+    if (userInput.length === passCode.length) {
+      checkPass();
+    }
+  }, [userInput]);
 
   const Button = ({ value }) => {
     const handleClick = () => {
-      if (userInput.length === passCode.length) return null;
       handleUserInput(value);
     };
 

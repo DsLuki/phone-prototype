@@ -28,17 +28,23 @@ const Layout = ({ children }) => {
     }, 1000);
   };
 
+  const toggleWire = () => {
+    setShowWire(!showWire);
+    setPlugIn(false);
+    setCharging(false);
+  };
+
   return (
     <div className="w-dvw h-screen flex items-center justify-center bg-neutral-500">
       {showWire && <ChargerWire chargePhone={chargePhone} plugIn={plugIn} />}
       <div className="h-1/2 w-80 bg-gray-700 p-2 rounded-lg drop-shadow-lg">
         <ScreenButton toggleScreen={toggleScreen} />
-        <ChargingSocket hidePlug={hidePlug} />
+        <ChargingSocket toggleWire={toggleWire} />
         <Camera />
         {hideScreen ? (
           <BlackScreen charging={charging} />
         ) : (
-          <div className="w-full h-full rounded-md overflow-hidden relative">
+          <div className="flex flex-col w-full h-full rounded-md overflow-hidden relative">
             <Topbar />
             {children}
             <HomeButton />
