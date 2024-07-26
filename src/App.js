@@ -15,6 +15,9 @@ const App = () => {
             <Route path="/" element={<LockScreen />} />
             <Route path="/home" element={<HomeScreen />} />
             <Route path="/contacts" element={<Contacts />} />
+            <Route path="/messages" element={<Contacts />} />
+            <Route path="/calendar" element={<Contacts />} />
+            <Route path="/notes" element={<Contacts />} />
           </Routes>
         </PhoneLayout>
       </BrowserRouter>

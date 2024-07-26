@@ -9,13 +9,12 @@ export default function Topbar() {
         onMouseEnter={() => setExpanded(true)}
         className="flex justify-between flex-col w-full py-2 px-1 bg-gray-900 text-sm z-10 text-slate-200 relative"
       >
-        <div className="flex flex-row  items-center justify-between w-full">
+        <div className="flex flex-row  items-center justify-between w-full px-1">
           <div className="">
-            <span className="tracking-wide">21:37</span>
+            <span className="">21:37</span>
           </div>
           <div className="flex items-center">
             <img width={20} src="/img/signal.svg" alt="" />
-            <span className="ml-1">88%</span>
             <img width={18} src="/img/battery.svg" alt="" />
           </div>
         </div>

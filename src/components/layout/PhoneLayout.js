@@ -29,16 +29,16 @@ const Layout = ({ children }) => {
   };
 
   return (
-    <div className="max-w-dvw h-dvh flex items-center justify-center bg-slate-400 overflow-hidden">
+    <div className="w-dvw h-screen flex items-center justify-center bg-neutral-500">
       {showWire && <ChargerWire chargePhone={chargePhone} plugIn={plugIn} />}
-      <div className="h-1/2 min-w-80 bg-gray-700 px-2 py-2 rounded-md drop-shadow-lg relative">
+      <div className="h-1/2 w-80 bg-gray-700 p-2 rounded-lg drop-shadow-lg">
         <ScreenButton toggleScreen={toggleScreen} />
         <ChargingSocket hidePlug={hidePlug} />
         <Camera />
         {hideScreen ? (
           <BlackScreen charging={charging} />
         ) : (
-          <div className="w-80 h-full rounded overflow-hidden relative">
+          <div className="w-full h-full rounded-md overflow-hidden relative">
             <Topbar />
             {children}
             <HomeButton />
